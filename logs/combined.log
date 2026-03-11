@@ -25,3 +25,4 @@
 {"level":"info","message":"::1 - - [11/Mar/2026:20:27:28 +0000] \"GET /api HTTP/1.1\" 200 42 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-11T20:27:28.734Z"}
 {"level":"info","message":"::1 - - [11/Mar/2026:20:27:38 +0000] \"GET /health HTTP/1.1\" 200 77 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-11T20:27:38.187Z"}
 {"level":"info","message":"::1 - - [11/Mar/2026:20:28:15 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 32 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-11T20:28:15.867Z"}
+{"level":"info","message":"::1 - - [11/Mar/2026:20:53:55 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 200 32 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-11T20:53:55.787Z"}
