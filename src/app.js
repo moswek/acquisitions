@@ -4,7 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
-import authRoutes from '#routes/auth.route.js';
+import authRoutes from '#routes/auth.routes.js';
 
 const app = express();
 

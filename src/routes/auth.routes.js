@@ -1,4 +1,5 @@
 import express from 'express';
+import { signup } from '#controllers/auth.controller.js';
 
 const router = express.Router();
 
@@ -6,9 +7,8 @@ const router = express.Router();
 // @desc    Authenticate user and get token
 // @access  Public
 
-router.post('/sign-up', (req, res) => {
-  res.send(' POST /api/auth/sign-up response');
-});
+router.post('/sign-up', signup);
+
 router.post('/sign-in', (req, res) => {
   res.send(' POST /api/auth/sign-in response');
 });
