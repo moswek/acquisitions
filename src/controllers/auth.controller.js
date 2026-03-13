@@ -90,24 +90,29 @@ export const signOut = async (req, res, next) => {
     const token = cookies.get(req, 'token');
     
     if (!token) {
-      return res.status(400).json({ error: 'No active session found' });
+      logger.info('Sign-out attempted with no active session');
+      return res.status(200).json({ 
+        message: 'User signed out successfully',
+        note: 'No active session was found'
+      });
     }
 
-    // Verify token to get user info for logging
-    const decoded = jwttoken.verify(token);
+    try {
+      // Verify token to get user info for logging
+      const decoded = jwttoken.verify(token);
+      cookies.clear(res, 'token');
+      logger.info(`User signed out successfully: ${decoded.email}`);
+    } catch (verifyError) {
+      // Token is invalid, but still clear it
+      cookies.clear(res, 'token');
+      logger.info('Invalid token cleared during sign-out');
+    }
     
-    cookies.clear(res, 'token');
-    logger.info(`User signed out successfully: ${decoded.email}`);
     res.status(200).json({
       message: 'User signed out successfully',
     });
   } catch (e) {
     logger.error('Sign-out error', e);
-    if (e.message === 'Failed to verify token') {
-      // Clear invalid token anyway
-      cookies.clear(res, 'token');
-      return res.status(200).json({ message: 'User signed out successfully' });
-    }
     next(e);
   }
 };

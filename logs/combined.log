@@ -89,3 +89,28 @@
 {"level":"info","message":"User cupcake@digitaltalisman.com created successfully","service":"acquisitions-api","timestamp":"2026-03-13T11:11:50.011Z"}
 {"level":"info","message":"User registered successfully: cupcake@digitaltalisman.com","service":"acquisitions-api","timestamp":"2026-03-13T11:11:50.019Z"}
 {"level":"info","message":"::1 - - [13/Mar/2026:11:11:50 +0000] \"POST /api/auth/sign-up?Email=contact%40digitaltalisman.com HTTP/1.1\" 201 114 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T11:11:50.022Z"}
+{"level":"info","message":"User cupcake@digitaltalisman.com authenticated successfully","service":"acquisitions-api","timestamp":"2026-03-13T13:11:49.100Z"}
+{"level":"info","message":"User signed in successfully: cupcake@digitaltalisman.com","service":"acquisitions-api","timestamp":"2026-03-13T13:11:49.134Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:11:49 +0000] \"POST /api/auth/sign-in?Email=contact%40digitaltalisman.com HTTP/1.1\" 200 113 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T13:11:49.139Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:14:27 +0000] \"POST /api/auth/sign-out?Email=contact%40digitaltalisman.com HTTP/1.1\" 400 35 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T13:14:27.056Z"}
+{"level":"info","message":"User cupcake@digitaltalisman.com authenticated successfully","service":"acquisitions-api","timestamp":"2026-03-13T13:15:23.911Z"}
+{"level":"info","message":"User signed in successfully: cupcake@digitaltalisman.com","service":"acquisitions-api","timestamp":"2026-03-13T13:15:23.913Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:15:23 +0000] \"POST /api/auth/sign-in?Email=contact%40digitaltalisman.com HTTP/1.1\" 200 113 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T13:15:23.914Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:15:33 +0000] \"POST /api/auth/sign-out?Email=contact%40digitaltalisman.com HTTP/1.1\" 400 35 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T13:15:33.768Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:19:25 +0000] \"POST /api/auth/sign-up?Email=contact%40digitaltalisman.com HTTP/1.1\" 400 91 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T13:19:25.130Z"}
+{"level":"info","message":"User adam@digitaltalisman.com created successfully","service":"acquisitions-api","timestamp":"2026-03-13T13:19:40.398Z"}
+{"level":"info","message":"User registered successfully: adam@digitaltalisman.com","service":"acquisitions-api","timestamp":"2026-03-13T13:19:40.405Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:19:40 +0000] \"POST /api/auth/sign-up?Email=contact%40digitaltalisman.com HTTP/1.1\" 201 108 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T13:19:40.407Z"}
+{"level":"info","message":"User adam@digitaltalisman.com authenticated successfully","service":"acquisitions-api","timestamp":"2026-03-13T13:20:45.675Z"}
+{"level":"info","message":"User signed in successfully: adam@digitaltalisman.com","service":"acquisitions-api","timestamp":"2026-03-13T13:20:45.678Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:20:45 +0000] \"POST /api/auth/sign-in?Email=contact%40digitaltalisman.com HTTP/1.1\" 200 107 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T13:20:45.679Z"}
+{"level":"info","message":"Sign-out attempted with no active session","service":"acquisitions-api","timestamp":"2026-03-13T13:21:42.411Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:21:42 +0000] \"POST /api/auth/sign-out?Email=contact%40digitaltalisman.com HTTP/1.1\" 200 79 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T13:21:42.413Z"}
+{"level":"error","message":"Error authenticating user: User not found","service":"acquisitions-api","timestamp":"2026-03-13T13:30:37.652Z"}
+{"level":"error","message":"Sign-in error User not found","service":"acquisitions-api","stack":"Error: User not found\n    at authenticateUser (file:///Users/MosesWekesa/VSCodeProjects/acquisitions/acquisitions/src/services/auth.service.js:68:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async signIn (file:///Users/MosesWekesa/VSCodeProjects/acquisitions/acquisitions/src/controllers/auth.controller.js:61:18)","timestamp":"2026-03-13T13:30:37.657Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:30:37 +0000] \"POST /api/auth/sign-in HTTP/1.1\" 401 37 \"-\" \"curl/8.7.1\"","service":"acquisitions-api","timestamp":"2026-03-13T13:30:37.660Z"}
+{"level":"info","message":"User test@example.com created successfully","service":"acquisitions-api","timestamp":"2026-03-13T13:31:06.685Z"}
+{"level":"info","message":"User registered successfully: test@example.com","service":"acquisitions-api","timestamp":"2026-03-13T13:31:06.687Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:31:06 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 105 \"-\" \"curl/8.7.1\"","service":"acquisitions-api","timestamp":"2026-03-13T13:31:06.688Z"}
+{"level":"info","message":"User signed out successfully: test@example.com","service":"acquisitions-api","timestamp":"2026-03-13T13:31:30.923Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:13:31:30 +0000] \"POST /api/auth/sign-out HTTP/1.1\" 200 42 \"-\" \"curl/8.7.1\"","service":"acquisitions-api","timestamp":"2026-03-13T13:31:30.924Z"}
