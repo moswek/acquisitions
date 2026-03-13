@@ -37,3 +37,8 @@
 {"level":"info","message":"::1 - - [11/Mar/2026:22:20:18 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 1499 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-11T22:20:18.078Z"}
 {"level":"info","message":"::1 - - [11/Mar/2026:22:21:53 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 92 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-11T22:21:53.468Z"}
 {"level":"info","message":"::1 - - [11/Mar/2026:22:21:57 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 400 92 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-11T22:21:57.213Z"}
+{"level":"info","message":"::1 - - [11/Mar/2026:22:27:32 +0000] \"POST /api/auth/sign-up?Email=contact%40digitaltalisman.com HTTP/1.1\" 400 144 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-11T22:27:32.548Z"}
+{"level":"info","message":"User registered successfully: contact@digitaltalisman.com","service":"acquisitions-api","timestamp":"2026-03-11T22:28:24.518Z"}
+{"level":"info","message":"::1 - - [11/Mar/2026:22:28:24 +0000] \"POST /api/auth/sign-up?Email=contact%40digitaltalisman.com HTTP/1.1\" 201 112 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-11T22:28:24.520Z"}
+{"level":"info","message":"User registered successfully: contact@digitaltalisman.com","service":"acquisitions-api","timestamp":"2026-03-12T13:55:54.244Z"}
+{"level":"info","message":"::1 - - [12/Mar/2026:13:55:54 +0000] \"POST /api/auth/sign-up?Email=contact%40digitaltalisman.com HTTP/1.1\" 201 112 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-12T13:55:54.253Z"}
