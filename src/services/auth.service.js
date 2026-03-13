@@ -1,4 +1,4 @@
-import logger from '#config/logger.config.js';
+import logger from '#config/logger.js';
 import bcrypt from 'bcrypt';
 import { eq } from 'drizzle-orm';
 import { db } from '#config/database.js';
@@ -22,7 +22,7 @@ export const createUser = async ({ name, email, password, role = 'user' }) => {
       .limit(1);
 
     if (existingUser.length > 0) {
-      throw new Error('User already exists');
+      throw new Error('User with this email already exists');
     }
 
     const password_hash = await hashPassword(password);
@@ -35,13 +35,14 @@ export const createUser = async ({ name, email, password, role = 'user' }) => {
         name: users.name,
         email: users.email,
         role: users.role,
-        created_at: users.created_at,
+        created_at: users.createdAt,
       });
 
     logger.info(`User ${newUser.email} created successfully`);
     return newUser;
   } catch (e) {
-    logger.error(`Error creating user: ${e}`);
+    logger.error(`Error creating user: ${e.message}`);
+    logger.error(e.stack);
     throw new Error('Error creating user');
   }
 };
