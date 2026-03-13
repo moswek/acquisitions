@@ -86,3 +86,6 @@
 {"level":"info","message":"User bossman@digitaltalisman.com created successfully","service":"acquisitions-api","timestamp":"2026-03-13T10:59:34.665Z"}
 {"level":"info","message":"User registered successfully: bossman@digitaltalisman.com","service":"acquisitions-api","timestamp":"2026-03-13T10:59:34.683Z"}
 {"level":"info","message":"::1 - - [13/Mar/2026:10:59:34 +0000] \"POST /api/auth/sign-up?Email=contact%40digitaltalisman.com HTTP/1.1\" 201 115 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T10:59:34.694Z"}
+{"level":"info","message":"User cupcake@digitaltalisman.com created successfully","service":"acquisitions-api","timestamp":"2026-03-13T11:11:50.011Z"}
+{"level":"info","message":"User registered successfully: cupcake@digitaltalisman.com","service":"acquisitions-api","timestamp":"2026-03-13T11:11:50.019Z"}
+{"level":"info","message":"::1 - - [13/Mar/2026:11:11:50 +0000] \"POST /api/auth/sign-up?Email=contact%40digitaltalisman.com HTTP/1.1\" 201 114 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T11:11:50.022Z"}
