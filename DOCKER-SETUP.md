@@ -42,6 +42,7 @@ docker-compose -f docker-compose.dev.yml up --build
 ```
 
 This will:
+
 - Start a Neon Local proxy that creates an ephemeral branch
 - Build and start your application
 - Connect the app to the local Postgres endpoint
@@ -119,6 +120,7 @@ curl http://localhost:3000/health
 ### Environment Variables
 
 #### Development (.env.development)
+
 ```bash
 NODE_ENV=development
 DATABASE_URL=postgres://neon:npg@neon-local:5432/acquisitions?sslmode=require
@@ -128,6 +130,7 @@ PARENT_BRANCH_ID=your_parent_branch_id
 ```
 
 #### Production (.env.production)
+
 ```bash
 NODE_ENV=production
 DATABASE_URL=postgres://user:pass@ep-xxx.neon.tech/dbname?sslmode=require
@@ -137,12 +140,14 @@ JWT_SECRET=your-production-secret
 ### Database Connection Modes
 
 #### Development (Neon Local)
+
 - Creates ephemeral database branches automatically
 - Each container restart = fresh database copy
 - Perfect for testing without data persistence concerns
 - Supports both Postgres and Neon serverless drivers
 
 #### Production (Neon Cloud)
+
 - Direct connection to your Neon Cloud database
 - Persistent data storage
 - Optimized for performance and reliability
@@ -151,6 +156,7 @@ JWT_SECRET=your-production-secret
 ## Docker Images
 
 ### Multi-stage Build
+
 The Dockerfile uses multi-stage builds:
 
 - **base**: Common Node.js setup
@@ -159,6 +165,7 @@ The Dockerfile uses multi-stage builds:
 - **production**: Optimized runtime image
 
 ### Security Features
+
 - Non-root user (nodejs:nodejs)
 - Read-only filesystem in production
 - Resource limits and health checks
@@ -169,6 +176,7 @@ The Dockerfile uses multi-stage builds:
 ### Common Issues
 
 #### 1. Neon Local Connection Failed
+
 ```bash
 # Check Neon Local container logs
 docker-compose -f docker-compose.dev.yml logs neon-local
@@ -178,6 +186,7 @@ docker-compose -f docker-compose.dev.yml exec app env | grep NEON
 ```
 
 #### 2. Database Migration Issues
+
 ```bash
 # Run migrations manually
 docker-compose -f docker-compose.dev.yml exec app npm run db:migrate
@@ -190,10 +199,13 @@ console.log('Database connected:', !!db);
 ```
 
 #### 3. SSL/TLS Certificate Issues
+
 For development, the Neon Local proxy uses self-signed certificates. This is handled automatically in the configuration.
 
 #### 4. Hot Reload Not Working
+
 Ensure source code is properly mounted:
+
 ```bash
 # Check volume mounts
 docker-compose -f docker-compose.dev.yml exec app ls -la /usr/src/app/src
@@ -202,11 +214,13 @@ docker-compose -f docker-compose.dev.yml exec app ls -la /usr/src/app/src
 ### Performance Optimization
 
 #### Development
+
 - Source code volumes for hot reloading
 - Debug logging enabled
 - Development-optimized Neon Local config
 
 #### Production
+
 - Read-only container filesystem
 - Resource limits (1 CPU, 512MB RAM)
 - Compressed logging with rotation
@@ -215,18 +229,23 @@ docker-compose -f docker-compose.dev.yml exec app ls -la /usr/src/app/src
 ## Deployment Platforms
 
 ### Docker Swarm
+
 ```bash
 docker stack deploy -c docker-compose.prod.yml acquisitions
 ```
 
 ### Kubernetes
+
 Convert using kompose:
+
 ```bash
 kompose convert -f docker-compose.prod.yml
 ```
 
 ### Cloud Platforms
+
 The production Docker Compose file works with:
+
 - AWS ECS
 - Google Cloud Run
 - Azure Container Instances

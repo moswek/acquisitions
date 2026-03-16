@@ -1,9 +1,11 @@
 # Acquisitions API - Warp Documentation
 
 ## Project Overview
+
 A Node.js REST API for user acquisition management built with Express 5, Drizzle ORM, and Neon PostgreSQL. The project uses ES modules and implements authentication with JWT tokens and HTTP-only cookies.
 
 ## Tech Stack
+
 - **Runtime**: Node.js (ES Modules)
 - **Framework**: Express 5
 - **Database**: PostgreSQL (Neon serverless)
@@ -15,6 +17,7 @@ A Node.js REST API for user acquisition management built with Express 5, Drizzle
 - **Code Quality**: ESLint + Prettier
 
 ## Project Structure
+
 ```
 src/
 ├── index.js              # Entry point (loads env, starts server)
@@ -40,7 +43,9 @@ src/
 ```
 
 ## Path Aliases
+
 The project uses Node.js subpath imports for clean imports:
+
 - `#config/*` → `./src/config/*`
 - `#controllers/*` → `./src/controllers/*`
 - `#middleware/*` → `./src/middleware/*`
@@ -51,6 +56,7 @@ The project uses Node.js subpath imports for clean imports:
 - `#validations/*` → `./src/validations/*`
 
 ## Available Scripts
+
 ```bash
 npm run dev              # Start development server with watch mode
 npm run lint             # Run ESLint
@@ -63,7 +69,9 @@ npm run db:studio        # Open Drizzle Studio
 ```
 
 ## Environment Variables
+
 Required environment variables (see `.env.example`):
+
 ```bash
 # Server Configuration
 PORT=3000
@@ -78,7 +86,9 @@ JWT_SECRET=your-secret-key-please-change-in-production
 ```
 
 ## Database Schema
+
 ### Users Table
+
 - `id`: Serial primary key
 - `name`: VARCHAR(255), required
 - `email`: VARCHAR(255), required, unique
@@ -90,6 +100,7 @@ JWT_SECRET=your-secret-key-please-change-in-production
 ## API Endpoints
 
 ### Authentication Routes (`/api/auth`)
+
 - `POST /api/auth/sign-up` - User registration (implemented)
   - Body: `{ name, email, password, role? }`
   - Returns: User object + JWT cookie
@@ -97,11 +108,13 @@ JWT_SECRET=your-secret-key-please-change-in-production
 - `POST /api/auth/sign-out` - User logout (stub)
 
 ### Health Check Routes
+
 - `GET /` - Basic hello response
 - `GET /health` - Health check with uptime
 - `GET /api` - API status check
 
 ## Development Workflow
+
 1. **Setup**: Copy `.env.example` to `.env` and configure DATABASE_URL
 2. **Install**: `npm install`
 3. **Database**: `npm run db:generate && npm run db:migrate`
@@ -109,12 +122,14 @@ JWT_SECRET=your-secret-key-please-change-in-production
 5. **Testing**: Use Drizzle Studio (`npm run db:studio`) for database inspection
 
 ## Code Style
+
 - **ESLint**: Configured with recommended rules, 2-space indentation
 - **Prettier**: Single quotes, semicolons, 80 char width
 - **Import Style**: ES modules with path aliases
 - **Error Handling**: Winston logging with structured error messages
 
 ## Security Features
+
 - Password hashing with bcrypt (salt rounds: 10)
 - JWT tokens with 1-day expiration
 - HTTP-only cookies with secure flags in production
@@ -123,17 +138,20 @@ JWT_SECRET=your-secret-key-please-change-in-production
 - Input validation with Zod
 
 ## Known Issues
+
 - Sign-in and sign-out routes are not implemented (only stubs exist)
 - Bug in `cookies.clear()` function: references undefined `options` variable
 - Missing JWT secret validation in production environments
 
 ## Common Tasks
+
 - **Add new route**: Create in `src/routes/`, add controller in `src/controllers/`
 - **Database changes**: Update schema in `src/models/`, run `npm run db:generate`
 - **Add validation**: Create schemas in `src/validations/` using Zod
 - **Add middleware**: Create in `src/middleware/` (directory needs to be created)
 
 ## Logging
+
 - **Development**: Console output with colors
 - **Production**: File logging to `logs/` directory
   - `logs/error.log` - Error level logs
@@ -141,7 +159,9 @@ JWT_SECRET=your-secret-key-please-change-in-production
 - **HTTP requests**: Morgan middleware logs to Winston
 
 ## Dependencies
+
 ### Core
+
 - `express` (5.2.1) - Web framework
 - `drizzle-orm` (0.45.1) - Database ORM
 - `@neondatabase/serverless` (1.0.2) - Neon database driver
@@ -150,6 +170,7 @@ JWT_SECRET=your-secret-key-please-change-in-production
 - `jsonwebtoken` (9.0.3) - JWT tokens
 
 ### Utilities
+
 - `winston` (3.19.0) - Logging
 - `helmet` (8.1.0) - Security headers
 - `cors` (2.8.6) - Cross-origin requests

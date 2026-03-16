@@ -61,12 +61,10 @@ export const updateUserById = async (req, res, next) => {
 
     // Only allow users to update their own info unless admin
     if (req.user.role !== 'admin' && req.user.id !== id) {
-      return res
-        .status(403)
-        .json({
-          error: 'Forbidden',
-          message: 'You can only update your own information',
-        });
+      return res.status(403).json({
+        error: 'Forbidden',
+        message: 'You can only update your own information',
+      });
     }
 
     const bodyValidation = updateUserSchema.safeParse(req.body);
@@ -111,12 +109,10 @@ export const deleteUserById = async (req, res, next) => {
 
     // Only allow admins or the user themselves to delete
     if (req.user.role !== 'admin' && req.user.id !== id) {
-      return res
-        .status(403)
-        .json({
-          error: 'Forbidden',
-          message: 'You can only delete your own account',
-        });
+      return res.status(403).json({
+        error: 'Forbidden',
+        message: 'You can only delete your own account',
+      });
     }
 
     const result = await deleteUser(id);
