@@ -22,7 +22,7 @@ COPY . .
 RUN chown -R nodejs:nodejs /usr/src/app
 USER nodejs
 EXPOSE 3000
-
+CMD ["dumb-init", "node", "--watch", "src/index.js"]
 
 # Production dependencies stage
 FROM base AS deps
@@ -47,14 +47,15 @@ EXPOSE 3000
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node -e "const http = require('http'); \
+    CMD node -e "const http = require('http'); \
     const options = { hostname: 'localhost', port: 3000, path: '/health', timeout: 2000 }; \
     const req = http.request(options, (res) => { \
-      if (res.statusCode === 200) process.exit(0); \
-      else process.exit(1); \
+    if (res.statusCode === 200) process.exit(0); \
+    else process.exit(1); \
     }); \
     req.on('error', () => process.exit(1)); \
     req.on('timeout', () => process.exit(1)); \
     req.end();"
 
 # Start the application
+CMD ["dumb-init", "node", "src/index.js"]

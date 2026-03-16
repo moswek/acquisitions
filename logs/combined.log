@@ -201,3 +201,28 @@
 {"level":"info","message":"User moses@test.com created successfully","service":"acquisitions-api","timestamp":"2026-03-13T16:54:39.578Z"}
 {"level":"info","message":"User registered successfully: moses@test.com","service":"acquisitions-api","timestamp":"2026-03-13T16:54:39.588Z"}
 {"level":"info","message":"::1 - - [13/Mar/2026:16:54:39 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 99 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-13T16:54:39.593Z"}
+{"level":"info","message":"User drake@test.com created successfully","service":"acquisitions-api","timestamp":"2026-03-14T05:11:34.842Z"}
+{"level":"info","message":"User registered successfully: drake@test.com","service":"acquisitions-api","timestamp":"2026-03-14T05:11:34.871Z"}
+{"level":"info","message":"::1 - - [14/Mar/2026:05:11:34 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 99 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-14T05:11:34.873Z"}
+{"level":"info","message":"Hello from Acquisitions!","service":"acquisitions-api","timestamp":"2026-03-15T05:05:26.441Z"}
+{"level":"info","message":"::1 - - [15/Mar/2026:05:05:26 +0000] \"GET / HTTP/1.1\" 200 24 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15\"","service":"acquisitions-api","timestamp":"2026-03-15T05:05:26.459Z"}
+{"level":"info","message":"User fred@test.com created successfully","service":"acquisitions-api","timestamp":"2026-03-15T05:05:33.593Z"}
+{"level":"info","message":"User registered successfully: fred@test.com","service":"acquisitions-api","timestamp":"2026-03-15T05:05:33.601Z"}
+{"level":"info","message":"::1 - - [15/Mar/2026:05:05:33 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 97 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-15T05:05:33.602Z"}
+{"level":"info","message":"Hello from Acquisitions!","service":"acquisitions-api","timestamp":"2026-03-15T05:17:41.974Z"}
+{"level":"info","message":"::1 - - [15/Mar/2026:05:17:41 +0000] \"GET / HTTP/1.1\" 200 24 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15\"","service":"acquisitions-api","timestamp":"2026-03-15T05:17:41.976Z"}
+{"level":"info","message":"User frankie@test.com created successfully","service":"acquisitions-api","timestamp":"2026-03-15T05:20:39.668Z"}
+{"level":"info","message":"User registered successfully: frankie@test.com","service":"acquisitions-api","timestamp":"2026-03-15T05:20:39.676Z"}
+{"level":"info","message":"::1 - - [15/Mar/2026:05:20:39 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 104 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-15T05:20:39.681Z"}
+{"level":"info","message":"User hamstere@test.com created successfully","service":"acquisitions-api","timestamp":"2026-03-15T06:00:56.920Z"}
+{"level":"info","message":"User registered successfully: hamstere@test.com","service":"acquisitions-api","timestamp":"2026-03-15T06:00:56.923Z"}
+{"level":"info","message":"::1 - - [15/Mar/2026:06:00:56 +0000] \"POST /api/auth/sign-up HTTP/1.1\" 201 105 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-15T06:00:56.927Z"}
+{"level":"info","message":"::1 - - [15/Mar/2026:06:14:20 +0000] \"POST /api/auth/health HTTP/1.1\" 404 155 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-15T06:14:20.389Z"}
+{"level":"info","message":"::1 - - [15/Mar/2026:06:14:27 +0000] \"GET /api/auth/health HTTP/1.1\" 404 154 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-15T06:14:27.020Z"}
+{"level":"info","message":"::1 - - [15/Mar/2026:06:14:31 +0000] \"GET /api/auth/health HTTP/1.1\" 404 154 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-15T06:14:31.899Z"}
+{"level":"info","message":"::1 - - [15/Mar/2026:06:14:37 +0000] \"GET /health HTTP/1.1\" 200 78 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-15T06:14:37.458Z"}
+{"level":"info","message":"::1 - - [15/Mar/2026:06:14:40 +0000] \"GET /health HTTP/1.1\" 200 78 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-15T06:14:40.385Z"}
+{"ip":"::1","level":"warn","message":"Rate limit exceeded","method":"GET","path":"/health","service":"acquisitions-api","timestamp":"2026-03-15T06:14:41.146Z","userAgent":"HTTPie"}
+{"level":"info","message":"::1 - - [15/Mar/2026:06:14:41 +0000] \"GET /health HTTP/1.1\" 403 51 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-15T06:14:41.148Z"}
+{"ip":"::1","level":"warn","message":"Rate limit exceeded","method":"GET","path":"/health","service":"acquisitions-api","timestamp":"2026-03-15T06:14:41.619Z","userAgent":"HTTPie"}
+{"level":"info","message":"::1 - - [15/Mar/2026:06:14:41 +0000] \"GET /health HTTP/1.1\" 403 51 \"-\" \"HTTPie\"","service":"acquisitions-api","timestamp":"2026-03-15T06:14:41.620Z"}
