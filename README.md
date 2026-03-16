@@ -17,21 +17,22 @@ A production-ready RESTful API built with Node.js and Express, featuring authent
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Runtime | Node.js 18+ |
-| Framework | Express.js |
-| Database | PostgreSQL via Neon |
-| ORM | Drizzle ORM |
-| Auth | JWT + HTTP-only cookies |
-| Validation | Zod |
-| Security | Arcjet (rate limiting, bot detection, shield) |
-| Logging | Winston + Morgan |
-| Testing | Jest + Supertest |
-| Containerization | Docker + Docker Compose |
-| CI/CD | GitHub Actions |
+| Layer            | Technology                                    |
+| ---------------- | --------------------------------------------- |
+| Runtime          | Node.js 18+                                   |
+| Framework        | Express.js                                    |
+| Database         | PostgreSQL via Neon                           |
+| ORM              | Drizzle ORM                                   |
+| Auth             | JWT + HTTP-only cookies                       |
+| Validation       | Zod                                           |
+| Security         | Arcjet (rate limiting, bot detection, shield) |
+| Logging          | Winston + Morgan                              |
+| Testing          | Jest + Supertest                              |
+| Containerization | Docker + Docker Compose                       |
+| CI/CD            | GitHub Actions                                |
 
 ## Project Structure
+
 ```
 src/
 ├── config/          # Database, logger, and Arcjet configuration
@@ -56,17 +57,20 @@ src/
 ### Installation
 
 1. Clone the repository
+
 ```bash
 git clone https://github.com/moswek/acquisitions.git
 cd acquisitions
 ```
 
 2. Install dependencies
+
 ```bash
 npm install
 ```
 
 3. Set up environment variables
+
 ```bash
 cp .env.example .env
 ```
@@ -74,16 +78,19 @@ cp .env.example .env
 Fill in your values in `.env`.
 
 4. Run database migrations
+
 ```bash
 npx drizzle-kit push
 ```
 
 5. Start the development server
+
 ```bash
 npm run dev
 ```
 
 ### Running with Docker
+
 ```bash
 npm run dev:docker
 ```
@@ -94,31 +101,32 @@ This spins up the app and a local Neon proxy via Docker Compose with hot reload 
 
 ### Auth
 
-| Method | Endpoint | Description | Access |
-|---|---|---|---|
-| POST | `/api/auth/sign-up` | Register a new user | Public |
-| POST | `/api/auth/sign-in` | Authenticate and receive token | Public |
-| POST | `/api/auth/sign-out` | Clear session token | Public |
+| Method | Endpoint             | Description                    | Access |
+| ------ | -------------------- | ------------------------------ | ------ |
+| POST   | `/api/auth/sign-up`  | Register a new user            | Public |
+| POST   | `/api/auth/sign-in`  | Authenticate and receive token | Public |
+| POST   | `/api/auth/sign-out` | Clear session token            | Public |
 
 ### Users
 
-| Method | Endpoint | Description | Access |
-|---|---|---|---|
-| GET | `/api/users` | Get all users | Admin only |
-| GET | `/api/users/:id` | Get user by ID | Authenticated |
-| PUT | `/api/users/:id` | Update user | Own profile or Admin |
-| DELETE | `/api/users/:id` | Delete user | Admin only |
+| Method | Endpoint         | Description    | Access               |
+| ------ | ---------------- | -------------- | -------------------- |
+| GET    | `/api/users`     | Get all users  | Admin only           |
+| GET    | `/api/users/:id` | Get user by ID | Authenticated        |
+| PUT    | `/api/users/:id` | Update user    | Own profile or Admin |
+| DELETE | `/api/users/:id` | Delete user    | Admin only           |
 
 ### Health
 
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/health` | Service health check |
-| GET | `/api` | API status |
+| Method | Endpoint  | Description          |
+| ------ | --------- | -------------------- |
+| GET    | `/health` | Service health check |
+| GET    | `/api`    | API status           |
 
 ## Environment Variables
 
 See `.env.example` for all required variables.
+
 ```env
 PORT=3000
 NODE_ENV=development
