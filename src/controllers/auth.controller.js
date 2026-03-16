@@ -17,7 +17,6 @@ export const signup = async (req, res, next) => {
 
     const { name, email, password, role } = validationResult.data;
 
-    // AUTH SERVICE
     const user = await createUser({ name, email, password, role });
     const token = jwttoken.sign({
       id: user.id,
@@ -57,7 +56,6 @@ export const signIn = async (req, res, next) => {
 
     const { email, password } = validationResult.data;
 
-    // AUTH SERVICE
     const user = await authenticateUser({ email, password });
     const token = jwttoken.sign({
       id: user.id,
@@ -88,26 +86,25 @@ export const signIn = async (req, res, next) => {
 export const signOut = async (req, res, next) => {
   try {
     const token = cookies.get(req, 'token');
-    
+
     if (!token) {
       logger.info('Sign-out attempted with no active session');
-      return res.status(200).json({ 
+      return res.status(200).json({
         message: 'User signed out successfully',
-        note: 'No active session was found'
+        note: 'No active session was found',
       });
     }
 
     try {
-      // Verify token to get user info for logging
       const decoded = jwttoken.verify(token);
       cookies.clear(res, 'token');
       logger.info(`User signed out successfully: ${decoded.email}`);
-    } catch (verifyError) {
-      // Token is invalid, but still clear it
+    } catch {
+      // ✅ removed unused 'verifyError' variable
       cookies.clear(res, 'token');
       logger.info('Invalid token cleared during sign-out');
     }
-    
+
     res.status(200).json({
       message: 'User signed out successfully',
     });
